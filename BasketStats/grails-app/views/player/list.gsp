@@ -24,17 +24,13 @@
 				<thead>
 					<tr>
 					
-						<g:sortableColumn property="fullname" title="${message(code: 'player.fullname.label', default: 'Fullname')}" />
+						<th><g:message code="player.person.label" default="Person" /></th>
 					
-						<g:sortableColumn property="email" title="${message(code: 'player.email.label', default: 'Email')}" />
+						<th><g:message code="player.team.label" default="Team" /></th>
 					
-						<g:sortableColumn property="phoneNumber" title="${message(code: 'player.phoneNumber.label', default: 'Phone Number')}" />
+						<g:sortableColumn property="shirtNumber" title="${message(code: 'player.shirtNumber.label', default: 'Shirt Number')}" />
 					
-						<g:sortableColumn property="streetAddress" title="${message(code: 'player.streetAddress.label', default: 'Street Address')}" />
-					
-						<g:sortableColumn property="city" title="${message(code: 'player.city.label', default: 'City')}" />
-					
-						<g:sortableColumn property="zipCode" title="${message(code: 'player.zipCode.label', default: 'Zip Code')}" />
+						<g:sortableColumn property="injuried" title="${message(code: 'player.injuried.label', default: 'Injuried')}" />
 					
 					</tr>
 				</thead>
@@ -42,17 +38,13 @@
 				<g:each in="${playerInstanceList}" status="i" var="playerInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${playerInstance.id}">${fieldValue(bean: playerInstance, field: "fullname")}</g:link></td>
+						<td><g:link action="show" id="${playerInstance.id}">${fieldValue(bean: playerInstance, field: "person")}</g:link></td>
 					
-						<td>${fieldValue(bean: playerInstance, field: "email")}</td>
+						<td>${fieldValue(bean: playerInstance, field: "team")}</td>
 					
-						<td>${fieldValue(bean: playerInstance, field: "phoneNumber")}</td>
+						<td>${fieldValue(bean: playerInstance, field: "shirtNumber")}</td>
 					
-						<td>${fieldValue(bean: playerInstance, field: "streetAddress")}</td>
-					
-						<td>${fieldValue(bean: playerInstance, field: "city")}</td>
-					
-						<td>${fieldValue(bean: playerInstance, field: "zipCode")}</td>
+						<td><g:formatBoolean boolean="${playerInstance.injuried}" /></td>
 					
 					</tr>
 				</g:each>

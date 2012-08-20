@@ -1,19 +1,22 @@
 package info.colleoni.basketstats
 
-class Player extends Person {
+class Player {
 	
+	Person person
 	String shirtNumber
-	String role
-
+	static hasMany = [roles : Role]
+	boolean injuried
+	
 	Team team
 	
 	String toString() {
-		"$fullname #$shirtNumber [$role]"
+		"$person.fullname #$shirtNumber"
 	}
 
     static constraints = {
-		
+		person()
+		team()
     	shirtNumber()
-    	role(inList:["Playmaker" , "Guard" , "Forward" , "Center" ])
+		injuried()
     }
 }

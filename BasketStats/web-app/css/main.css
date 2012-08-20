@@ -47,8 +47,18 @@ body {
 	        box-shadow: 0 0 0.3em #255b17;
 }
 
-#grailsLogo {
+#bsLogo {
 	background-color: #abbf78;
+	background-image: url("../images/bs_logo.png");
+	height: 80px;
+	width: 960px;
+}
+
+#bsLogo a {
+	text-align: right;
+	color: white;
+	font-size: small;
+	display: block;
 }
 
 /* replace with .no-boxshadow body if you have modernizr available */

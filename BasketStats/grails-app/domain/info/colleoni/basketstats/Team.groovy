@@ -8,7 +8,7 @@ class Team {
 	static hasMany = [players : Player, executives : Person]
 
 	String toString(){
-		name
+		"$name ($season)"
 	}
 
 
