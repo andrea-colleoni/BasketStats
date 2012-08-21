@@ -32,15 +32,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${playerInstance?.team}">
-				<li class="fieldcontain">
-					<span id="team-label" class="property-label"><g:message code="player.team.label" default="Team" /></span>
-					
-						<span class="property-value" aria-labelledby="team-label"><g:link controller="team" action="show" id="${playerInstance?.team?.id}">${playerInstance?.team?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${playerInstance?.shirtNumber}">
 				<li class="fieldcontain">
 					<span id="shirtNumber-label" class="property-label"><g:message code="player.shirtNumber.label" default="Shirt Number" /></span>
@@ -59,12 +50,34 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${playerInstance?.playerStats}">
+				<li class="fieldcontain">
+					<span id="playerStats-label" class="property-label"><g:message code="player.playerStats.label" default="Player Stats" /></span>
+					
+						<g:each in="${playerInstance.playerStats}" var="p">
+						<span class="property-value" aria-labelledby="playerStats-label"><g:link controller="playerStatistics" action="show" id="${p.id}">${p?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${playerInstance?.roles}">
 				<li class="fieldcontain">
 					<span id="roles-label" class="property-label"><g:message code="player.roles.label" default="Roles" /></span>
 					
 						<g:each in="${playerInstance.roles}" var="r">
 						<span class="property-value" aria-labelledby="roles-label"><g:link controller="role" action="show" id="${r.id}">${r?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${playerInstance?.rosters}">
+				<li class="fieldcontain">
+					<span id="rosters-label" class="property-label"><g:message code="player.rosters.label" default="Rosters" /></span>
+					
+						<g:each in="${playerInstance.rosters}" var="r">
+						<span class="property-value" aria-labelledby="rosters-label"><g:link controller="roster" action="show" id="${r.id}">${r?.encodeAsHTML()}</g:link></span>
 						</g:each>
 					
 				</li>

@@ -41,55 +41,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${seasonInstance?.division}">
-				<li class="fieldcontain">
-					<span id="division-label" class="property-label"><g:message code="season.division.label" default="Division" /></span>
-					
-						<span class="property-value" aria-labelledby="division-label"><g:fieldValue bean="${seasonInstance}" field="division"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${seasonInstance?.groupage}">
-				<li class="fieldcontain">
-					<span id="groupage-label" class="property-label"><g:message code="season.groupage.label" default="Groupage" /></span>
-					
-						<span class="property-value" aria-labelledby="groupage-label"><g:fieldValue bean="${seasonInstance}" field="groupage"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${seasonInstance?.phase}">
-				<li class="fieldcontain">
-					<span id="phase-label" class="property-label"><g:message code="season.phase.label" default="Phase" /></span>
-					
-						<span class="property-value" aria-labelledby="phase-label"><g:fieldValue bean="${seasonInstance}" field="phase"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${seasonInstance?.matches}">
-				<li class="fieldcontain">
-					<span id="matches-label" class="property-label"><g:message code="season.matches.label" default="Matches" /></span>
-					
-						<g:each in="${seasonInstance.matches}" var="m">
-						<span class="property-value" aria-labelledby="matches-label"><g:link controller="match" action="show" id="${m.id}">${m?.encodeAsHTML()}</g:link></span>
-						</g:each>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${seasonInstance?.teams}">
-				<li class="fieldcontain">
-					<span id="teams-label" class="property-label"><g:message code="season.teams.label" default="Teams" /></span>
-					
-						<g:each in="${seasonInstance.teams}" var="t">
-						<span class="property-value" aria-labelledby="teams-label"><g:link controller="team" action="show" id="${t.id}">${t?.encodeAsHTML()}</g:link></span>
-						</g:each>
-					
-				</li>
-				</g:if>
-			
 			</ol>
 			<g:form>
 				<fieldset class="buttons">

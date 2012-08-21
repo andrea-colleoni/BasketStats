@@ -32,11 +32,13 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${teamInstance?.coach}">
+				<g:if test="${teamInstance?.coaches}">
 				<li class="fieldcontain">
-					<span id="coach-label" class="property-label"><g:message code="team.coach.label" default="Coach" /></span>
+					<span id="coaches-label" class="property-label"><g:message code="team.coaches.label" default="Coaches" /></span>
 					
-						<span class="property-value" aria-labelledby="coach-label"><g:link controller="person" action="show" id="${teamInstance?.coach?.id}">${teamInstance?.coach?.encodeAsHTML()}</g:link></span>
+						<g:each in="${teamInstance.coaches}" var="c">
+						<span class="property-value" aria-labelledby="coaches-label"><g:link controller="person" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></span>
+						</g:each>
 					
 				</li>
 				</g:if>
@@ -48,26 +50,6 @@
 						<g:each in="${teamInstance.executives}" var="e">
 						<span class="property-value" aria-labelledby="executives-label"><g:link controller="person" action="show" id="${e.id}">${e?.encodeAsHTML()}</g:link></span>
 						</g:each>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${teamInstance?.players}">
-				<li class="fieldcontain">
-					<span id="players-label" class="property-label"><g:message code="team.players.label" default="Players" /></span>
-					
-						<g:each in="${teamInstance.players}" var="p">
-						<span class="property-value" aria-labelledby="players-label"><g:link controller="player" action="show" id="${p.id}">${p?.encodeAsHTML()}</g:link></span>
-						</g:each>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${teamInstance?.season}">
-				<li class="fieldcontain">
-					<span id="season-label" class="property-label"><g:message code="team.season.label" default="Season" /></span>
-					
-						<span class="property-value" aria-labelledby="season-label"><g:link controller="season" action="show" id="${teamInstance?.season?.id}">${teamInstance?.season?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>

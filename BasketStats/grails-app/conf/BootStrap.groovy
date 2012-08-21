@@ -1,8 +1,17 @@
 import info.colleoni.basketstats.Role
+import info.colleoni.basketstats.Season
+import info.colleoni.basketstats.User
 
 class BootStrap {
 
 	def init = { servletContext ->
+		if (!Season.get(1)){
+			def season = new Season(startYear: 2011 ,
+				endYear: 2012)
+			if (!season.save()){
+				season.errors.allErrors.each{ error -> println "An error occured with season: ${error}" }
+			}
+		}
 		if (!Role.get(1)){
 			def playMaker = new Role(roleName: 'Point Guard' ,
 					rolePosition: 1)
@@ -24,10 +33,18 @@ class BootStrap {
 			if (!pwForward.save()){
 				pwForward.errors.allErrors.each{ error -> println "An error occured with power forward: ${error}" }
 			}
-			def center = new Role(roleName: 'Forward' ,
+			def center = new Role(roleName: 'Center' ,
 					rolePosition: 5)
 			if (!center.save()){
 				center.errors.allErrors.each{ error -> println "An error occured with center: ${error}" }
+			}
+		}
+		if (!User.get(1)){
+			def root = new User(email: 'root@localhost.lcl' ,
+					password: 'secret',
+					subscriptionDate: new Date())
+			if (!root.save()){
+				root.errors.allErrors.each{ error -> println "An error occured with root user: ${error}" }
 			}
 		}
 	}

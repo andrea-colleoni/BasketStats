@@ -4,18 +4,18 @@ class Player {
 	
 	Person person
 	String shirtNumber
-	static hasMany = [roles : Role]
+	
+	static hasMany = [roles : Role, rosters : Roster, playerStats : PlayerStatistics]
+	static belongsTo = Roster
+	
 	boolean injuried
 	
-	Team team
-	
 	String toString() {
-		"$person.fullname #$shirtNumber"
+		"$person.fullname - #$shirtNumber"
 	}
 
     static constraints = {
 		person()
-		team()
     	shirtNumber()
 		injuried()
     }

@@ -26,8 +26,6 @@
 					
 						<th><g:message code="player.person.label" default="Person" /></th>
 					
-						<th><g:message code="player.team.label" default="Team" /></th>
-					
 						<g:sortableColumn property="shirtNumber" title="${message(code: 'player.shirtNumber.label', default: 'Shirt Number')}" />
 					
 						<g:sortableColumn property="injuried" title="${message(code: 'player.injuried.label', default: 'Injuried')}" />
@@ -39,8 +37,6 @@
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
 						<td><g:link action="show" id="${playerInstance.id}">${fieldValue(bean: playerInstance, field: "person")}</g:link></td>
-					
-						<td>${fieldValue(bean: playerInstance, field: "team")}</td>
 					
 						<td>${fieldValue(bean: playerInstance, field: "shirtNumber")}</td>
 					

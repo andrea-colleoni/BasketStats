@@ -10,14 +10,6 @@
 	<g:select id="person" name="person.id" from="${info.colleoni.basketstats.Person.list()}" optionKey="id" required="" value="${playerInstance?.person?.id}" class="many-to-one"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: playerInstance, field: 'team', 'error')} required">
-	<label for="team">
-		<g:message code="player.team.label" default="Team" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:select id="team" name="team.id" from="${info.colleoni.basketstats.Team.list()}" optionKey="id" required="" value="${playerInstance?.team?.id}" class="many-to-one"/>
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: playerInstance, field: 'shirtNumber', 'error')} ">
 	<label for="shirtNumber">
 		<g:message code="player.shirtNumber.label" default="Shirt Number" />
@@ -34,11 +26,27 @@
 	<g:checkBox name="injuried" value="${playerInstance?.injuried}" />
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: playerInstance, field: 'playerStats', 'error')} ">
+	<label for="playerStats">
+		<g:message code="player.playerStats.label" default="Player Stats" />
+		
+	</label>
+	<g:select name="playerStats" from="${info.colleoni.basketstats.PlayerStatistics.list()}" multiple="multiple" optionKey="id" size="5" value="${playerInstance?.playerStats*.id}" class="many-to-many"/>
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: playerInstance, field: 'roles', 'error')} ">
 	<label for="roles">
 		<g:message code="player.roles.label" default="Roles" />
 		
 	</label>
 	<g:select name="roles" from="${info.colleoni.basketstats.Role.list()}" multiple="multiple" optionKey="id" size="5" value="${playerInstance?.roles*.id}" class="many-to-many"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: playerInstance, field: 'rosters', 'error')} ">
+	<label for="rosters">
+		<g:message code="player.rosters.label" default="Rosters" />
+		
+	</label>
+	
 </div>
 

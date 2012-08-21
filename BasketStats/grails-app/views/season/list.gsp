@@ -28,12 +28,6 @@
 					
 						<g:sortableColumn property="endYear" title="${message(code: 'season.endYear.label', default: 'End Year')}" />
 					
-						<g:sortableColumn property="division" title="${message(code: 'season.division.label', default: 'Division')}" />
-					
-						<g:sortableColumn property="groupage" title="${message(code: 'season.groupage.label', default: 'Groupage')}" />
-					
-						<g:sortableColumn property="phase" title="${message(code: 'season.phase.label', default: 'Phase')}" />
-					
 					</tr>
 				</thead>
 				<tbody>
@@ -43,12 +37,6 @@
 						<td><g:link action="show" id="${seasonInstance.id}">${fieldValue(bean: seasonInstance, field: "startYear")}</g:link></td>
 					
 						<td>${fieldValue(bean: seasonInstance, field: "endYear")}</td>
-					
-						<td>${fieldValue(bean: seasonInstance, field: "division")}</td>
-					
-						<td>${fieldValue(bean: seasonInstance, field: "groupage")}</td>
-					
-						<td>${fieldValue(bean: seasonInstance, field: "phase")}</td>
 					
 					</tr>
 				</g:each>

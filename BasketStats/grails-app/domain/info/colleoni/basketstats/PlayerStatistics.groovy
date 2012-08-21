@@ -1,18 +1,24 @@
 package info.colleoni.basketstats
 
-class Statistics {
+class PlayerStatistics {
 	
 	Match match
+	Roster roster
 	Player player
+	static belongsTo = [Match, Player]
 	
 	boolean startingFive
+	
+	float defenseGrade
+	float offenseGrade
+	float overallGrade
+	String notes
 	
 	int firstQtrMinutes
 	int secondQtrMinutes
 	int thirdQtrMinutes
 	int fourthQtrMinutes
-	int getTotalMinutes() { firstQtrMinutes + secondQtrMinutes + thirdQtrMinutes + fourthQtrMinutes }
-	
+	int totalMinutes
 	
 	int threePtsScored
 	int threePtsAttempts	
@@ -42,19 +48,31 @@ class Statistics {
 	int foulsMade
 	int foulsSuffered
 	
+	int technicalFouls
+	int unsportmanlikeFouls
+	boolean expulsion
+	
 	String toString() {
-		"$player.fullname ($match): "
+		"$player: $totalPoints"
 	}
 
     static constraints = {
 		match()
+		roster()
 		player()
-		
+	
 		startingFive()
+		
+		defenseGrade(nullable:true)
+		offenseGrade(nullable:true)
+		overallGrade(nullable:true)
+		notes(nullable:true, maxSize:5000)
+		
 		firstQtrMinutes()
 		secondQtrMinutes()
 		thirdQtrMinutes()
-		fourthQtrMinutes()		
+		fourthQtrMinutes()
+		totalMinutes()
 		
 		threePtsScored()
 		threePtsAttempts()
@@ -74,6 +92,5 @@ class Statistics {
 		blocksSuffered()
 		foulsMade()
 		foulsSuffered()
-		
     }
 }
