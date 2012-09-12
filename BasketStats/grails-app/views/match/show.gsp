@@ -111,7 +111,7 @@
 			
 				<g:if test="${matchInstance?.firstQtrTeamAScore}">
 				<li class="fieldcontain">
-					<span id="firstQtrTeamAScore-label" class="property-label"><g:message code="match.firstQtrTeamAScore.label" default="First Qtr Team AS core" /></span>
+					<span id="firstQtrTeamAScore-label" class="property-label"><g:message code="match.firstQtrTeamAScore.label" default="First Qtr Team A Score" /></span>
 					
 						<span class="property-value" aria-labelledby="firstQtrTeamAScore-label"><g:fieldValue bean="${matchInstance}" field="firstQtrTeamAScore"/></span>
 					

@@ -5,9 +5,9 @@ package info.colleoni.basketstats
 import org.junit.*
 import grails.test.mixin.*
 
-@TestFor(MatchCallController)
+@TestFor(PlayerSetController)
 @Mock(PlayerSet)
-class MatchCallControllerTests {
+class PlayerSetControllerTests {
 
     def populateValidParams(params) {
         assert params != null
@@ -17,35 +17,35 @@ class MatchCallControllerTests {
 
     void testIndex() {
         controller.index()
-        assert "/matchCall/list" == response.redirectedUrl
+        assert "/playerSet/list" == response.redirectedUrl
     }
 
     void testList() {
 
         def model = controller.list()
 
-        assert model.matchCallInstanceList.size() == 0
-        assert model.matchCallInstanceTotal == 0
+        assert model.playerSetInstanceList.size() == 0
+        assert model.playerSetInstanceTotal == 0
     }
 
     void testCreate() {
         def model = controller.create()
 
-        assert model.matchCallInstance != null
+        assert model.playerSetInstance != null
     }
 
     void testSave() {
         controller.save()
 
-        assert model.matchCallInstance != null
-        assert view == '/matchCall/create'
+        assert model.playerSetInstance != null
+        assert view == '/playerSet/create'
 
         response.reset()
 
         populateValidParams(params)
         controller.save()
 
-        assert response.redirectedUrl == '/matchCall/show/1'
+        assert response.redirectedUrl == '/playerSet/show/1'
         assert controller.flash.message != null
         assert PlayerSet.count() == 1
     }
@@ -54,102 +54,102 @@ class MatchCallControllerTests {
         controller.show()
 
         assert flash.message != null
-        assert response.redirectedUrl == '/matchCall/list'
+        assert response.redirectedUrl == '/playerSet/list'
 
         populateValidParams(params)
-        def matchCall = new PlayerSet(params)
+        def playerSet = new PlayerSet(params)
 
-        assert matchCall.save() != null
+        assert playerSet.save() != null
 
-        params.id = matchCall.id
+        params.id = playerSet.id
 
         def model = controller.show()
 
-        assert model.matchCallInstance == matchCall
+        assert model.playerSetInstance == playerSet
     }
 
     void testEdit() {
         controller.edit()
 
         assert flash.message != null
-        assert response.redirectedUrl == '/matchCall/list'
+        assert response.redirectedUrl == '/playerSet/list'
 
         populateValidParams(params)
-        def matchCall = new PlayerSet(params)
+        def playerSet = new PlayerSet(params)
 
-        assert matchCall.save() != null
+        assert playerSet.save() != null
 
-        params.id = matchCall.id
+        params.id = playerSet.id
 
         def model = controller.edit()
 
-        assert model.matchCallInstance == matchCall
+        assert model.playerSetInstance == playerSet
     }
 
     void testUpdate() {
         controller.update()
 
         assert flash.message != null
-        assert response.redirectedUrl == '/matchCall/list'
+        assert response.redirectedUrl == '/playerSet/list'
 
         response.reset()
 
         populateValidParams(params)
-        def matchCall = new PlayerSet(params)
+        def playerSet = new PlayerSet(params)
 
-        assert matchCall.save() != null
+        assert playerSet.save() != null
 
         // test invalid parameters in update
-        params.id = matchCall.id
+        params.id = playerSet.id
         //TODO: add invalid values to params object
 
         controller.update()
 
-        assert view == "/matchCall/edit"
-        assert model.matchCallInstance != null
+        assert view == "/playerSet/edit"
+        assert model.playerSetInstance != null
 
-        matchCall.clearErrors()
+        playerSet.clearErrors()
 
         populateValidParams(params)
         controller.update()
 
-        assert response.redirectedUrl == "/matchCall/show/$matchCall.id"
+        assert response.redirectedUrl == "/playerSet/show/$playerSet.id"
         assert flash.message != null
 
         //test outdated version number
         response.reset()
-        matchCall.clearErrors()
+        playerSet.clearErrors()
 
         populateValidParams(params)
-        params.id = matchCall.id
+        params.id = playerSet.id
         params.version = -1
         controller.update()
 
-        assert view == "/matchCall/edit"
-        assert model.matchCallInstance != null
-        assert model.matchCallInstance.errors.getFieldError('version')
+        assert view == "/playerSet/edit"
+        assert model.playerSetInstance != null
+        assert model.playerSetInstance.errors.getFieldError('version')
         assert flash.message != null
     }
 
     void testDelete() {
         controller.delete()
         assert flash.message != null
-        assert response.redirectedUrl == '/matchCall/list'
+        assert response.redirectedUrl == '/playerSet/list'
 
         response.reset()
 
         populateValidParams(params)
-        def matchCall = new PlayerSet(params)
+        def playerSet = new PlayerSet(params)
 
-        assert matchCall.save() != null
+        assert playerSet.save() != null
         assert PlayerSet.count() == 1
 
-        params.id = matchCall.id
+        params.id = playerSet.id
 
         controller.delete()
 
         assert PlayerSet.count() == 0
-        assert PlayerSet.get(matchCall.id) == null
-        assert response.redirectedUrl == '/matchCall/list'
+        assert PlayerSet.get(playerSet.id) == null
+        assert response.redirectedUrl == '/playerSet/list'
     }
 }

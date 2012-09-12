@@ -28,7 +28,7 @@
 					
 						<g:sortableColumn property="shirtNumber" title="${message(code: 'player.shirtNumber.label', default: 'Shirt Number')}" />
 					
-						<g:sortableColumn property="injuried" title="${message(code: 'player.injuried.label', default: 'Injuried')}" />
+						<th><g:message code="player.roles.label" default="Roles" /></th>
 					
 					</tr>
 				</thead>
@@ -40,7 +40,7 @@
 					
 						<td>${fieldValue(bean: playerInstance, field: "shirtNumber")}</td>
 					
-						<td><g:formatBoolean boolean="${playerInstance.injuried}" /></td>
+						<td>${fieldValue(bean: playerInstance, field: "roles")}</td>
 					
 					</tr>
 				</g:each>

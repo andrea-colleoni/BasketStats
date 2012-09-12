@@ -85,6 +85,10 @@
 		<div id="page-body" role="main">
 			<h1>Welcome to Basket Stats</h1>
 			<p>Congratulations, you have successfully started your Basket Stats application!</p>
+			
+			<p>Start creating a new <g:link controller="Season">Season</g:link>, and a <g:link controller="Person">pool of persons</g:link> (players, referees, executives, 
+			coaches and so on).
+			</p>
 
 			<div id="controller-list" role="navigation">
 				<h2>Available Controllers:</h2>

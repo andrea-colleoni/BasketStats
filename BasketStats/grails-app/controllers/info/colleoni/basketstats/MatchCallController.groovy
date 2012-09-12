@@ -12,15 +12,15 @@ class MatchCallController {
 
     def list(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        [matchCallInstanceList: MatchCall.list(params), matchCallInstanceTotal: MatchCall.count()]
+        [matchCallInstanceList: PlayerSet.list(params), matchCallInstanceTotal: PlayerSet.count()]
     }
 
     def create() {
-        [matchCallInstance: new MatchCall(params)]
+        [matchCallInstance: new PlayerSet(params)]
     }
 
     def save() {
-        def matchCallInstance = new MatchCall(params)
+        def matchCallInstance = new PlayerSet(params)
         if (!matchCallInstance.save(flush: true)) {
             render(view: "create", model: [matchCallInstance: matchCallInstance])
             return
@@ -31,7 +31,7 @@ class MatchCallController {
     }
 
     def show(Long id) {
-        def matchCallInstance = MatchCall.get(id)
+        def matchCallInstance = PlayerSet.get(id)
         if (!matchCallInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'matchCall.label', default: 'MatchCall'), id])
             redirect(action: "list")
@@ -42,7 +42,7 @@ class MatchCallController {
     }
 
     def edit(Long id) {
-        def matchCallInstance = MatchCall.get(id)
+        def matchCallInstance = PlayerSet.get(id)
         if (!matchCallInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'matchCall.label', default: 'MatchCall'), id])
             redirect(action: "list")
@@ -53,7 +53,7 @@ class MatchCallController {
     }
 
     def update(Long id, Long version) {
-        def matchCallInstance = MatchCall.get(id)
+        def matchCallInstance = PlayerSet.get(id)
         if (!matchCallInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'matchCall.label', default: 'MatchCall'), id])
             redirect(action: "list")
@@ -82,7 +82,7 @@ class MatchCallController {
     }
 
     def delete(Long id) {
-        def matchCallInstance = MatchCall.get(id)
+        def matchCallInstance = PlayerSet.get(id)
         if (!matchCallInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'matchCall.label', default: 'MatchCall'), id])
             redirect(action: "list")

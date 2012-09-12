@@ -26,3 +26,11 @@
 	<g:select name="executives" from="${info.colleoni.basketstats.Person.list()}" multiple="multiple" optionKey="id" size="5" value="${teamInstance?.executives*.id}" class="many-to-many"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: teamInstance, field: 'playerSets', 'error')} ">
+	<label for="playerSets">
+		<g:message code="team.playerSets.label" default="Player Sets" />
+		
+	</label>
+	<g:select name="playerSets" from="${info.colleoni.basketstats.PlayerSet.list()}" multiple="multiple" optionKey="id" size="5" value="${teamInstance?.playerSets*.id}" class="many-to-many"/>
+</div>
+

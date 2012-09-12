@@ -18,3 +18,20 @@
 	<g:field name="endYear" type="number" value="${seasonInstance.endYear}" required=""/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: seasonInstance, field: 'champioships', 'error')} ">
+	<label for="champioships">
+		<g:message code="season.champioships.label" default="Champioships" />
+		
+	</label>
+	
+<ul class="one-to-many">
+<g:each in="${seasonInstance?.champioships?}" var="c">
+    <li><g:link controller="championship" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></li>
+</g:each>
+<li class="add">
+<g:link controller="championship" action="create" params="['season.id': seasonInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'championship.label', default: 'Championship')])}</g:link>
+</li>
+</ul>
+
+</div>
+

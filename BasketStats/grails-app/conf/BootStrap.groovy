@@ -40,7 +40,7 @@ class BootStrap {
 			}
 		}
 		if (!User.get(1)){
-			def root = new User(email: 'root@localhost.lcl' ,
+			def root = new User(superAdministrator: true, email: 'root@localhost.lcl' ,
 					password: 'secret',
 					subscriptionDate: new Date())
 			if (!root.save()){

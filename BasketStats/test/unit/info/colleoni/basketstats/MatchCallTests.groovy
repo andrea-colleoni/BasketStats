@@ -1,16 +1,16 @@
-package basketstats
+package info.colleoni.basketstats
 
 
 
-import info.colleoni.basketstats.Roster;
+import info.colleoni.basketstats.PlayerSet;
 import grails.test.mixin.*
 import org.junit.*
 
 /**
  * See the API for {@link grails.test.mixin.domain.DomainClassUnitTestMixin} for usage instructions
  */
-@TestFor(Roster)
-class RosterTests {
+@TestFor(PlayerSet)
+class MatchCallTests {
 
     void testSomething() {
        fail "Implement me"

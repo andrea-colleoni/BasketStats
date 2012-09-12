@@ -54,6 +54,17 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${teamInstance?.playerSets}">
+				<li class="fieldcontain">
+					<span id="playerSets-label" class="property-label"><g:message code="team.playerSets.label" default="Player Sets" /></span>
+					
+						<g:each in="${teamInstance.playerSets}" var="p">
+						<span class="property-value" aria-labelledby="playerSets-label"><g:link controller="playerSet" action="show" id="${p.id}">${p?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
 			</ol>
 			<g:form>
 				<fieldset class="buttons">

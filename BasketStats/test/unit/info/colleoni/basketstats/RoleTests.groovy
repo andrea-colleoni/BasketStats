@@ -1,16 +1,16 @@
-package basketstats
+package info.colleoni.basketstats
 
 
 
-import info.colleoni.basketstats.PlayerStatistics;
+import info.colleoni.basketstats.Role;
 import grails.test.mixin.*
 import org.junit.*
 
 /**
  * See the API for {@link grails.test.mixin.domain.DomainClassUnitTestMixin} for usage instructions
  */
-@TestFor(PlayerStatistics)
-class StatisticsTests {
+@TestFor(Role)
+class RoleTests {
 
     void testSomething() {
        fail "Implement me"

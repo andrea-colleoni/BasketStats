@@ -31,7 +31,16 @@
 		<g:message code="championshipPhase.matches.label" default="Matches" />
 		
 	</label>
-	<g:select name="matches" from="${info.colleoni.basketstats.Match.list()}" multiple="multiple" optionKey="id" size="5" value="${championshipPhaseInstance?.matches*.id}" class="many-to-many"/>
+	
+<ul class="one-to-many">
+<g:each in="${championshipPhaseInstance?.matches?}" var="m">
+    <li><g:link controller="match" action="show" id="${m.id}">${m?.encodeAsHTML()}</g:link></li>
+</g:each>
+<li class="add">
+<g:link controller="match" action="create" params="['championshipPhase.id': championshipPhaseInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'match.label', default: 'Match')])}</g:link>
+</li>
+</ul>
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: championshipPhaseInstance, field: 'rosters', 'error')} ">

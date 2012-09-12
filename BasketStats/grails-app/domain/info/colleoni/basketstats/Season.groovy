@@ -4,6 +4,7 @@ class Season {
 
 	int startYear
 	int endYear
+	static hasMany = [champioships : Championship]
 
 
 	String toString(){

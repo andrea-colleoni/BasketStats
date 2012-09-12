@@ -1,6 +1,6 @@
 package info.colleoni.basketstats
 
-class MatchCall {
+class PlayerSet {
 	
 	String description
 	String notes

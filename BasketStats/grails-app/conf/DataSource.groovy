@@ -14,14 +14,17 @@ hibernate {
 environments {
     development {
         dataSource {
-            dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
+            dbCreate = "create" // one of 'create', 'create-drop', 'update', 'validate', ''
             url = "jdbc:mysql://localhost:3306/basketstats?useUnicode=yes&characterEncoding=UTF-8"
         }
     }
     test {
         dataSource {
             dbCreate = "update"
-            url = "jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000"
+            //url = "jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000"
+			url = "jdbc:mysql://208.11.220.249:3306/basketstats?useUnicode=yes&characterEncoding=UTF-8"
+			username = "acolleoni"
+			password = "34d1059812"
         }
     }
     production {

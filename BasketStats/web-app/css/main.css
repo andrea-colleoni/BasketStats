@@ -604,3 +604,25 @@ a.skip {
 	position: absolute;
 	left: -9999px;
 }
+
+
+#menuLeft {
+    background-color: #FAFAFA;
+    border: 1px dotted gray;
+    display: block;
+    float: left;
+    width: 200px;	
+}
+
+#menuLeft li {
+    background-color: #EEFFEE;
+    border: 1px dotted darkgreen;
+    list-style: none outside none;
+    margin: 5px;
+    padding: 2px;	
+}
+
+#mainContent {
+    float: right;
+    width: 755px;	
+}

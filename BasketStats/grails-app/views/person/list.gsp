@@ -29,13 +29,7 @@
 						<g:sortableColumn property="email" title="${message(code: 'person.email.label', default: 'Email')}" />
 					
 						<g:sortableColumn property="phoneNumber" title="${message(code: 'person.phoneNumber.label', default: 'Phone Number')}" />
-					
-						<g:sortableColumn property="streetAddress" title="${message(code: 'person.streetAddress.label', default: 'Street Address')}" />
-					
-						<g:sortableColumn property="city" title="${message(code: 'person.city.label', default: 'City')}" />
-					
-						<g:sortableColumn property="zipCode" title="${message(code: 'person.zipCode.label', default: 'Zip Code')}" />
-					
+				
 					</tr>
 				</thead>
 				<tbody>
@@ -47,12 +41,6 @@
 						<td>${fieldValue(bean: personInstance, field: "email")}</td>
 					
 						<td>${fieldValue(bean: personInstance, field: "phoneNumber")}</td>
-					
-						<td>${fieldValue(bean: personInstance, field: "streetAddress")}</td>
-					
-						<td>${fieldValue(bean: personInstance, field: "city")}</td>
-					
-						<td>${fieldValue(bean: personInstance, field: "zipCode")}</td>
 					
 					</tr>
 				</g:each>

@@ -4,6 +4,7 @@ class Championship {
 	
 	Season season
 	String division
+	static hasMany = [champioshipPhases : ChampionshipPhase]
 	
 	String toString(){
 		"$division - $season"

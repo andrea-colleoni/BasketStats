@@ -41,6 +41,17 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${seasonInstance?.champioships}">
+				<li class="fieldcontain">
+					<span id="champioships-label" class="property-label"><g:message code="season.champioships.label" default="Champioships" /></span>
+					
+						<g:each in="${seasonInstance.champioships}" var="c">
+						<span class="property-value" aria-labelledby="champioships-label"><g:link controller="championship" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
 			</ol>
 			<g:form>
 				<fieldset class="buttons">

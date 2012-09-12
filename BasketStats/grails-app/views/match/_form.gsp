@@ -15,7 +15,7 @@
 		<g:message code="match.teamA.label" default="Team A" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="teamA" name="teamA.id" from="${info.colleoni.basketstats.MatchCall.list()}" optionKey="id" required="" value="${matchInstance?.teamA?.id}" class="many-to-one"/>
+	<g:select id="teamA" name="teamA.id" from="${info.colleoni.basketstats.PlayerSet.list()}" optionKey="id" required="" value="${matchInstance?.teamA?.id}" class="many-to-one"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: matchInstance, field: 'teamB', 'error')} required">
@@ -23,7 +23,7 @@
 		<g:message code="match.teamB.label" default="Team B" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="teamB" name="teamB.id" from="${info.colleoni.basketstats.MatchCall.list()}" optionKey="id" required="" value="${matchInstance?.teamB?.id}" class="many-to-one"/>
+	<g:select id="teamB" name="teamB.id" from="${info.colleoni.basketstats.PlayerSet.list()}" optionKey="id" required="" value="${matchInstance?.teamB?.id}" class="many-to-one"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: matchInstance, field: 'matchDate', 'error')} required">
