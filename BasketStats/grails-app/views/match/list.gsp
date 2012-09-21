@@ -26,10 +26,6 @@
 					
 						<th><g:message code="match.championshipPhase.label" default="Championship Phase" /></th>
 					
-						<th><g:message code="match.teamA.label" default="Team A" /></th>
-					
-						<th><g:message code="match.teamB.label" default="Team B" /></th>
-					
 						<g:sortableColumn property="matchDate" title="${message(code: 'match.matchDate.label', default: 'Match Date')}" />
 					
 						<g:sortableColumn property="round" title="${message(code: 'match.round.label', default: 'Round')}" />
@@ -42,17 +38,13 @@
 				<g:each in="${matchInstanceList}" status="i" var="matchInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${matchInstance.id}">${fieldValue(bean: matchInstance, field: "championshipPhase")}</g:link></td>
+						<td><g:link action="show" id="${matchInstance.id}">${matchInstance.teamA} - ${matchInstance.teamB}</g:link></td>
 					
-						<td>${fieldValue(bean: matchInstance, field: "teamA")}</td>
+						<td><g:formatDate type="date" date="${matchInstance.matchDate}" /></td>
 					
-						<td>${fieldValue(bean: matchInstance, field: "teamB")}</td>
+						<td>${fieldValue(bean: matchInstance, field: "round")} ${fieldValue(bean: matchInstance, field: "phase")}</td>
 					
-						<td><g:formatDate date="${matchInstance.matchDate}" /></td>
-					
-						<td>${fieldValue(bean: matchInstance, field: "round")}</td>
-					
-						<td>${fieldValue(bean: matchInstance, field: "phase")}</td>
+						<td>${matchInstance.finalTeamAScore} - ${matchInstance.finalTeamBScore}</td>
 					
 					</tr>
 				</g:each>

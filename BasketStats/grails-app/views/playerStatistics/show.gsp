@@ -32,11 +32,11 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${playerStatisticsInstance?.roster}">
+				<g:if test="${playerStatisticsInstance?.playerSet}">
 				<li class="fieldcontain">
-					<span id="roster-label" class="property-label"><g:message code="playerStatistics.roster.label" default="Roster" /></span>
+					<span id="playerSet-label" class="property-label"><g:message code="playerStatistics.playerSet.label" default="Roster" /></span>
 					
-						<span class="property-value" aria-labelledby="roster-label"><g:link controller="roster" action="show" id="${playerStatisticsInstance?.roster?.id}">${playerStatisticsInstance?.roster?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="roster-label"><g:link controller="playerSet" action="show" id="${playerStatisticsInstance?.playerSet?.id}">${playerStatisticsInstance?.playerSet?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>
@@ -58,267 +58,111 @@
 					
 				</li>
 				</g:if>
-			
-				<g:if test="${playerStatisticsInstance?.defenseGrade}">
-				<li class="fieldcontain">
-					<span id="defenseGrade-label" class="property-label"><g:message code="playerStatistics.defenseGrade.label" default="Defense Grade" /></span>
-					
-						<span class="property-value" aria-labelledby="defenseGrade-label"><g:fieldValue bean="${playerStatisticsInstance}" field="defenseGrade"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${playerStatisticsInstance?.offenseGrade}">
-				<li class="fieldcontain">
-					<span id="offenseGrade-label" class="property-label"><g:message code="playerStatistics.offenseGrade.label" default="Offense Grade" /></span>
-					
-						<span class="property-value" aria-labelledby="offenseGrade-label"><g:fieldValue bean="${playerStatisticsInstance}" field="offenseGrade"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${playerStatisticsInstance?.overallGrade}">
-				<li class="fieldcontain">
-					<span id="overallGrade-label" class="property-label"><g:message code="playerStatistics.overallGrade.label" default="Overall Grade" /></span>
-					
-						<span class="property-value" aria-labelledby="overallGrade-label"><g:fieldValue bean="${playerStatisticsInstance}" field="overallGrade"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${playerStatisticsInstance?.notes}">
-				<li class="fieldcontain">
-					<span id="notes-label" class="property-label"><g:message code="playerStatistics.notes.label" default="Notes" /></span>
-					
-						<span class="property-value" aria-labelledby="notes-label"><g:fieldValue bean="${playerStatisticsInstance}" field="notes"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${playerStatisticsInstance?.firstQtrMinutes}">
-				<li class="fieldcontain">
-					<span id="firstQtrMinutes-label" class="property-label"><g:message code="playerStatistics.firstQtrMinutes.label" default="First Qtr Minutes" /></span>
-					
-						<span class="property-value" aria-labelledby="firstQtrMinutes-label"><g:fieldValue bean="${playerStatisticsInstance}" field="firstQtrMinutes"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${playerStatisticsInstance?.secondQtrMinutes}">
-				<li class="fieldcontain">
-					<span id="secondQtrMinutes-label" class="property-label"><g:message code="playerStatistics.secondQtrMinutes.label" default="Second Qtr Minutes" /></span>
-					
-						<span class="property-value" aria-labelledby="secondQtrMinutes-label"><g:fieldValue bean="${playerStatisticsInstance}" field="secondQtrMinutes"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${playerStatisticsInstance?.thirdQtrMinutes}">
-				<li class="fieldcontain">
-					<span id="thirdQtrMinutes-label" class="property-label"><g:message code="playerStatistics.thirdQtrMinutes.label" default="Third Qtr Minutes" /></span>
-					
-						<span class="property-value" aria-labelledby="thirdQtrMinutes-label"><g:fieldValue bean="${playerStatisticsInstance}" field="thirdQtrMinutes"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${playerStatisticsInstance?.fourthQtrMinutes}">
-				<li class="fieldcontain">
-					<span id="fourthQtrMinutes-label" class="property-label"><g:message code="playerStatistics.fourthQtrMinutes.label" default="Fourth Qtr Minutes" /></span>
-					
-						<span class="property-value" aria-labelledby="fourthQtrMinutes-label"><g:fieldValue bean="${playerStatisticsInstance}" field="fourthQtrMinutes"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${playerStatisticsInstance?.totalMinutes}">
-				<li class="fieldcontain">
-					<span id="totalMinutes-label" class="property-label"><g:message code="playerStatistics.totalMinutes.label" default="Total Minutes" /></span>
-					
-						<span class="property-value" aria-labelledby="totalMinutes-label"><g:fieldValue bean="${playerStatisticsInstance}" field="totalMinutes"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${playerStatisticsInstance?.threePtsScored}">
-				<li class="fieldcontain">
-					<span id="threePtsScored-label" class="property-label"><g:message code="playerStatistics.threePtsScored.label" default="Three Pts Scored" /></span>
-					
-						<span class="property-value" aria-labelledby="threePtsScored-label"><g:fieldValue bean="${playerStatisticsInstance}" field="threePtsScored"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${playerStatisticsInstance?.threePtsAttempts}">
-				<li class="fieldcontain">
-					<span id="threePtsAttempts-label" class="property-label"><g:message code="playerStatistics.threePtsAttempts.label" default="Three Pts Attempts" /></span>
-					
-						<span class="property-value" aria-labelledby="threePtsAttempts-label"><g:fieldValue bean="${playerStatisticsInstance}" field="threePtsAttempts"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${playerStatisticsInstance?.longDistanceShootsScored}">
-				<li class="fieldcontain">
-					<span id="longDistanceShootsScored-label" class="property-label"><g:message code="playerStatistics.longDistanceShootsScored.label" default="Long Distance Shoots Scored" /></span>
-					
-						<span class="property-value" aria-labelledby="longDistanceShootsScored-label"><g:fieldValue bean="${playerStatisticsInstance}" field="longDistanceShootsScored"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${playerStatisticsInstance?.longDistanceShootsAttempts}">
-				<li class="fieldcontain">
-					<span id="longDistanceShootsAttempts-label" class="property-label"><g:message code="playerStatistics.longDistanceShootsAttempts.label" default="Long Distance Shoots Attempts" /></span>
-					
-						<span class="property-value" aria-labelledby="longDistanceShootsAttempts-label"><g:fieldValue bean="${playerStatisticsInstance}" field="longDistanceShootsAttempts"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${playerStatisticsInstance?.shortDistanceShootsScored}">
-				<li class="fieldcontain">
-					<span id="shortDistanceShootsScored-label" class="property-label"><g:message code="playerStatistics.shortDistanceShootsScored.label" default="Short Distance Shoots Scored" /></span>
-					
-						<span class="property-value" aria-labelledby="shortDistanceShootsScored-label"><g:fieldValue bean="${playerStatisticsInstance}" field="shortDistanceShootsScored"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${playerStatisticsInstance?.shortDistanceShootsAttempts}">
-				<li class="fieldcontain">
-					<span id="shortDistanceShootsAttempts-label" class="property-label"><g:message code="playerStatistics.shortDistanceShootsAttempts.label" default="Short Distance Shoots Attempts" /></span>
-					
-						<span class="property-value" aria-labelledby="shortDistanceShootsAttempts-label"><g:fieldValue bean="${playerStatisticsInstance}" field="shortDistanceShootsAttempts"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${playerStatisticsInstance?.freeThrowsScored}">
-				<li class="fieldcontain">
-					<span id="freeThrowsScored-label" class="property-label"><g:message code="playerStatistics.freeThrowsScored.label" default="Free Throws Scored" /></span>
-					
-						<span class="property-value" aria-labelledby="freeThrowsScored-label"><g:fieldValue bean="${playerStatisticsInstance}" field="freeThrowsScored"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${playerStatisticsInstance?.freeThrowsAttempts}">
-				<li class="fieldcontain">
-					<span id="freeThrowsAttempts-label" class="property-label"><g:message code="playerStatistics.freeThrowsAttempts.label" default="Free Throws Attempts" /></span>
-					
-						<span class="property-value" aria-labelledby="freeThrowsAttempts-label"><g:fieldValue bean="${playerStatisticsInstance}" field="freeThrowsAttempts"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${playerStatisticsInstance?.defensiveRebounds}">
-				<li class="fieldcontain">
-					<span id="defensiveRebounds-label" class="property-label"><g:message code="playerStatistics.defensiveRebounds.label" default="Defensive Rebounds" /></span>
-					
-						<span class="property-value" aria-labelledby="defensiveRebounds-label"><g:fieldValue bean="${playerStatisticsInstance}" field="defensiveRebounds"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${playerStatisticsInstance?.offensiveRebounds}">
-				<li class="fieldcontain">
-					<span id="offensiveRebounds-label" class="property-label"><g:message code="playerStatistics.offensiveRebounds.label" default="Offensive Rebounds" /></span>
-					
-						<span class="property-value" aria-labelledby="offensiveRebounds-label"><g:fieldValue bean="${playerStatisticsInstance}" field="offensiveRebounds"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${playerStatisticsInstance?.steals}">
-				<li class="fieldcontain">
-					<span id="steals-label" class="property-label"><g:message code="playerStatistics.steals.label" default="Steals" /></span>
-					
-						<span class="property-value" aria-labelledby="steals-label"><g:fieldValue bean="${playerStatisticsInstance}" field="steals"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${playerStatisticsInstance?.turnovers}">
-				<li class="fieldcontain">
-					<span id="turnovers-label" class="property-label"><g:message code="playerStatistics.turnovers.label" default="Turnovers" /></span>
-					
-						<span class="property-value" aria-labelledby="turnovers-label"><g:fieldValue bean="${playerStatisticsInstance}" field="turnovers"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${playerStatisticsInstance?.assists}">
-				<li class="fieldcontain">
-					<span id="assists-label" class="property-label"><g:message code="playerStatistics.assists.label" default="Assists" /></span>
-					
-						<span class="property-value" aria-labelledby="assists-label"><g:fieldValue bean="${playerStatisticsInstance}" field="assists"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${playerStatisticsInstance?.blocksMade}">
-				<li class="fieldcontain">
-					<span id="blocksMade-label" class="property-label"><g:message code="playerStatistics.blocksMade.label" default="Blocks Made" /></span>
-					
-						<span class="property-value" aria-labelledby="blocksMade-label"><g:fieldValue bean="${playerStatisticsInstance}" field="blocksMade"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${playerStatisticsInstance?.blocksSuffered}">
-				<li class="fieldcontain">
-					<span id="blocksSuffered-label" class="property-label"><g:message code="playerStatistics.blocksSuffered.label" default="Blocks Suffered" /></span>
-					
-						<span class="property-value" aria-labelledby="blocksSuffered-label"><g:fieldValue bean="${playerStatisticsInstance}" field="blocksSuffered"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${playerStatisticsInstance?.foulsMade}">
-				<li class="fieldcontain">
-					<span id="foulsMade-label" class="property-label"><g:message code="playerStatistics.foulsMade.label" default="Fouls Made" /></span>
-					
-						<span class="property-value" aria-labelledby="foulsMade-label"><g:fieldValue bean="${playerStatisticsInstance}" field="foulsMade"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${playerStatisticsInstance?.foulsSuffered}">
-				<li class="fieldcontain">
-					<span id="foulsSuffered-label" class="property-label"><g:message code="playerStatistics.foulsSuffered.label" default="Fouls Suffered" /></span>
-					
-						<span class="property-value" aria-labelledby="foulsSuffered-label"><g:fieldValue bean="${playerStatisticsInstance}" field="foulsSuffered"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${playerStatisticsInstance?.expulsion}">
-				<li class="fieldcontain">
-					<span id="expulsion-label" class="property-label"><g:message code="playerStatistics.expulsion.label" default="Expulsion" /></span>
-					
-						<span class="property-value" aria-labelledby="expulsion-label"><g:formatBoolean boolean="${playerStatisticsInstance?.expulsion}" /></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${playerStatisticsInstance?.technicalFouls}">
-				<li class="fieldcontain">
-					<span id="technicalFouls-label" class="property-label"><g:message code="playerStatistics.technicalFouls.label" default="Technical Fouls" /></span>
-					
-						<span class="property-value" aria-labelledby="technicalFouls-label"><g:fieldValue bean="${playerStatisticsInstance}" field="technicalFouls"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${playerStatisticsInstance?.unsportmanlikeFouls}">
-				<li class="fieldcontain">
-					<span id="unsportmanlikeFouls-label" class="property-label"><g:message code="playerStatistics.unsportmanlikeFouls.label" default="Unsportmanlike Fouls" /></span>
-					
-						<span class="property-value" aria-labelledby="unsportmanlikeFouls-label"><g:fieldValue bean="${playerStatisticsInstance}" field="unsportmanlikeFouls"/></span>
-					
-				</li>
-				</g:if>
+				
+				<table class="SimpleCleanTable" id="GradeTableView">
+					<caption>Grades</caption>
+					<thead>
+						<tr>
+							<th>Overall</th>		
+							<th>Defensive</th>
+							<th>Off</th>
+							<th>Notes</th>
+						</tr>
+					</thead>
+					<tbody>
+						<th><g:fieldValue bean="${playerStatisticsInstance}" field="overallGrade"/></th>
+						<td><g:fieldValue bean="${playerStatisticsInstance}" field="defenseGrade"/></td>
+						<td><g:fieldValue bean="${playerStatisticsInstance}" field="offenseGrade"/></td>
+						<td><g:fieldValue bean="${playerStatisticsInstance}" field="notes"/></td>
+					</tbody>
+				</table>				
+
+				<table class="SimpleCleanTable" id="TimeTableView">
+					<caption>Time</caption>
+					<thead>
+						<tr>
+							<th>Total</th>		
+							<th>Qtr.1</th>
+							<th>Qtr.2</th>
+							<th>Qtr.3</th>
+							<th>Qtr.4</th>
+						</tr>
+					</thead>
+					<tbody>
+						<th><g:fieldValue bean="${playerStatisticsInstance}" field="totalMinutes"/></th>
+						<td><g:fieldValue bean="${playerStatisticsInstance}" field="firstQtrMinutes"/></td>
+						<td><g:fieldValue bean="${playerStatisticsInstance}" field="secondQtrMinutes"/></td>
+						<td><g:fieldValue bean="${playerStatisticsInstance}" field="thirdQtrMinutes"/></td>
+						<td><g:fieldValue bean="${playerStatisticsInstance}" field="fourthQtrMinutes"/></td>
+					</tbody>
+				</table>	
+
+				<table class="SimpleCleanTable" id="ScoreTableView">
+					<caption>Score</caption>
+					<thead>
+						<tr>
+							<th>3 Pts</th>		
+							<th>Long dst 2 Pts</th>
+							<th>Short dst 2 Pts</th>
+							<th>Free Throws</th>
+						</tr>
+					</thead>
+					<tbody>
+						<td><g:fieldValue bean="${playerStatisticsInstance}" field="threePtsScored"/>
+						/ <g:fieldValue bean="${playerStatisticsInstance}" field="threePtsAttempts"/>
+						</td>
+						<td><g:fieldValue bean="${playerStatisticsInstance}" field="longDistanceShootsScored"/>
+						/ <g:fieldValue bean="${playerStatisticsInstance}" field="longDistanceShootsAttempts"/></td>
+						<td><g:fieldValue bean="${playerStatisticsInstance}" field="shortDistanceShootsScored"/>
+						/ <g:fieldValue bean="${playerStatisticsInstance}" field="shortDistanceShootsAttempts"/></td>
+						<td><g:fieldValue bean="${playerStatisticsInstance}" field="freeThrowsScored"/>
+						/ <g:fieldValue bean="${playerStatisticsInstance}" field="freeThrowsAttempts"/></td>
+					</tbody>
+				</table>	
+				
+				<table class="SimpleCleanTable" id="PlayTableView">
+					<caption>Playing stats</caption>
+					<thead>
+						<tr>
+							<th>Def. Rbds.</th>		
+							<th>Off. Rbds.</th>
+							<th>Steals</th>
+							<th>Turnovers</th>
+							<th>Assists</th>
+							<th>Blks made</th>
+							<th>Blks suff</th>
+						</tr>
+					</thead>
+					<tbody>
+						<td><g:fieldValue bean="${playerStatisticsInstance}" field="defensiveRebounds"/></td>
+						<td><g:fieldValue bean="${playerStatisticsInstance}" field="offensiveRebounds"/></td>
+						<td><g:fieldValue bean="${playerStatisticsInstance}" field="steals"/></td>
+						<td><g:fieldValue bean="${playerStatisticsInstance}" field="turnovers"/></td>
+						<td><g:fieldValue bean="${playerStatisticsInstance}" field="assists"/></td>
+						<td><g:fieldValue bean="${playerStatisticsInstance}" field="blocksMade"/></td>
+						<td><g:fieldValue bean="${playerStatisticsInstance}" field="blocksSuffered"/></td>
+					</tbody>
+				</table>				
+
+				<table class="SimpleCleanTable" id="PlayTableView">
+					<caption>Fouls</caption>
+					<thead>
+						<tr>
+							<th>Made</th>		
+							<th>Suffered</th>
+							<th>Expulsion</th>
+							<th>Technicals</th>
+							<th>USLF</th>
+						</tr>
+					</thead>
+					<tbody>
+						<td><g:fieldValue bean="${playerStatisticsInstance}" field="foulsMade"/></td>
+						<td><g:fieldValue bean="${playerStatisticsInstance}" field="foulsSuffered"/></td>
+						<td><g:formatBoolean boolean="${playerStatisticsInstance?.expulsion}" /></td>
+						<td><g:fieldValue bean="${playerStatisticsInstance}" field="technicalFouls"/></td>
+						<td><g:fieldValue bean="${playerStatisticsInstance}" field="unsportmanlikeFouls"/></td>
+					</tbody>
+				</table>	
 			
 			</ol>
 			<g:form>

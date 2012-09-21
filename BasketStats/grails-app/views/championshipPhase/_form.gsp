@@ -43,11 +43,3 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: championshipPhaseInstance, field: 'rosters', 'error')} ">
-	<label for="rosters">
-		<g:message code="championshipPhase.rosters.label" default="Rosters" />
-		
-	</label>
-	<g:select name="rosters" from="${info.colleoni.basketstats.Roster.list()}" multiple="multiple" optionKey="id" size="5" value="${championshipPhaseInstance?.rosters*.id}" class="many-to-many"/>
-</div>
-

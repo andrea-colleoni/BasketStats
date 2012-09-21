@@ -7,8 +7,8 @@ class Match {
 	Date matchDate
 	int round
 	String phase
-	PlayerSet teamA
-	PlayerSet teamB
+	Team teamA
+	Team teamB
 	Person referee
 	ChampionshipPhase championshipPhase
 	String location
@@ -35,7 +35,7 @@ class Match {
 
 
 	String toString(){
-		"$teamA.roster.team  vs $teamB.roster.team"
+		"$teamA  vs $teamB"
 	}
 
 	static constraints = {

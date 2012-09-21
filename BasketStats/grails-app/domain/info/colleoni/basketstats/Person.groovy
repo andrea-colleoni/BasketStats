@@ -3,6 +3,7 @@ package info.colleoni.basketstats
 class Person {
 
 	String fullname;
+	String nick;
 	byte[] image;
 	String email;
 	String phoneNumber;
@@ -14,12 +15,13 @@ class Person {
 	User user;
 
 	String toString(){
-		fullname
+		nick ?: fullname
 	}
 
 
 	static constraints = {
 		fullname()
+		nick()
 		email(nullable:true, email:true)
 		phoneNumber(nullable:true)
 		streetAddress(nullable:true, blank:true)

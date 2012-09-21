@@ -26,15 +26,13 @@
 					
 						<th><g:message code="playerStatistics.match.label" default="Match" /></th>
 					
-						<th><g:message code="playerStatistics.roster.label" default="Roster" /></th>
-					
 						<th><g:message code="playerStatistics.player.label" default="Player" /></th>
 					
-						<g:sortableColumn property="startingFive" title="${message(code: 'playerStatistics.startingFive.label', default: 'Starting Five')}" />
+						<g:sortableColumn property="totalMinutes" title="${message(code: 'playerStatistics.totalMinutes.label', default: 'Tot. Minutes')}" />
 					
-						<g:sortableColumn property="defenseGrade" title="${message(code: 'playerStatistics.defenseGrade.label', default: 'Defense Grade')}" />
-					
-						<g:sortableColumn property="offenseGrade" title="${message(code: 'playerStatistics.offenseGrade.label', default: 'Offense Grade')}" />
+						<g:sortableColumn property="overallGrade" title="${message(code: 'playerStatistics.overallGrade.label', default: 'Grade')}" />
+						
+						<g:sortableColumn property="totalPoints" title="${message(code: 'playerStatistics.totalPoints.label', default: 'Pts.')}" />
 					
 					</tr>
 				</thead>
@@ -44,15 +42,13 @@
 					
 						<td><g:link action="show" id="${playerStatisticsInstance.id}">${fieldValue(bean: playerStatisticsInstance, field: "match")}</g:link></td>
 					
-						<td>${fieldValue(bean: playerStatisticsInstance, field: "roster")}</td>
-					
 						<td>${fieldValue(bean: playerStatisticsInstance, field: "player")}</td>
 					
-						<td><g:formatBoolean boolean="${playerStatisticsInstance.startingFive}" /></td>
+						<td>${fieldValue(bean: playerStatisticsInstance, field: "totalMinutes")}</td>
 					
-						<td>${fieldValue(bean: playerStatisticsInstance, field: "defenseGrade")}</td>
-					
-						<td>${fieldValue(bean: playerStatisticsInstance, field: "offenseGrade")}</td>
+						<td>${fieldValue(bean: playerStatisticsInstance, field: "overallGrade")}</td>
+						
+						<td>${fieldValue(bean: playerStatisticsInstance, field: "totalPoints")}</td>
 					
 					</tr>
 				</g:each>

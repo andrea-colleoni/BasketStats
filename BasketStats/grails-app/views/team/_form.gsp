@@ -26,11 +26,11 @@
 	<g:select name="executives" from="${info.colleoni.basketstats.Person.list()}" multiple="multiple" optionKey="id" size="5" value="${teamInstance?.executives*.id}" class="many-to-many"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: teamInstance, field: 'playerSets', 'error')} ">
-	<label for="playerSets">
-		<g:message code="team.playerSets.label" default="Player Sets" />
+<div class="fieldcontain ${hasErrors(bean: teamInstance, field: 'championshipPhases', 'error')} ">
+	<label for="championshipPhases">
+		<g:message code="team.championshipPhases.label" default="Championhip phases" />
 		
 	</label>
-	<g:select name="playerSets" from="${info.colleoni.basketstats.PlayerSet.list()}" multiple="multiple" optionKey="id" size="5" value="${teamInstance?.playerSets*.id}" class="many-to-many"/>
+	<g:select name="championshipPhases" from="${info.colleoni.basketstats.ChampionshipPhase.list()}" multiple="multiple" optionKey="id" size="5" value="${teamInstance?.championshipPhases*.id}" class="many-to-many"/>
 </div>
 

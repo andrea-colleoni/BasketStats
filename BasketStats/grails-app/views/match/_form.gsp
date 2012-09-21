@@ -15,7 +15,7 @@
 		<g:message code="match.teamA.label" default="Team A" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="teamA" name="teamA.id" from="${info.colleoni.basketstats.PlayerSet.list()}" optionKey="id" required="" value="${matchInstance?.teamA?.id}" class="many-to-one"/>
+	<g:select id="teamA" name="teamA.id" from="${info.colleoni.basketstats.Team.list()}" optionKey="id" required="" value="${matchInstance?.teamA?.id}" class="many-to-one"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: matchInstance, field: 'teamB', 'error')} required">
@@ -23,7 +23,7 @@
 		<g:message code="match.teamB.label" default="Team B" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="teamB" name="teamB.id" from="${info.colleoni.basketstats.PlayerSet.list()}" optionKey="id" required="" value="${matchInstance?.teamB?.id}" class="many-to-one"/>
+	<g:select id="teamB" name="teamB.id" from="${info.colleoni.basketstats.Team.list()}" optionKey="id" required="" value="${matchInstance?.teamB?.id}" class="many-to-one"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: matchInstance, field: 'matchDate', 'error')} required">
@@ -81,70 +81,34 @@
 	</label>
 	<input type="file" id="matchScout" name="matchScout" />
 </div>
+<table width="100%" id="QuerterByQuarterScore">
+	<thead>
+		<tr>
+			<th>&nbsp;</th>
+			<th>1° Qtr.</th>
+			<th>2° Qtr.</th>
+			<th>3° Qtr.</th>
+			<th>4° Qtr.</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th><g:message code="match.teamA.label" default="Team A" /></th>
+			<td><g:field name="firstQtrTeamAScore" type="number" value="${matchInstance.firstQtrTeamAScore}" required=""/></td>
+			<td><g:field name="secondQtrTeamAScore" type="number" value="${matchInstance.secondQtrTeamAScore}" required=""/></td>
+			<td><g:field name="thirdQtrTeamAScore" type="number" value="${matchInstance.thirdQtrTeamAScore}" required=""/></td>
+			<td><g:field name="fourthQtrTeamAScore" type="number" value="${matchInstance.fourthQtrTeamAScore}" required=""/></td>
+		</tr>
+		<tr>
+			<th><g:message code="match.teamB.label" default="Team B" /></th>		
+			<td><g:field name="firstQtrTeamBScore" type="number" value="${matchInstance.firstQtrTeamBScore}" required=""/></td>
+			<td><g:field name="secondQtrTeamBScore" type="number" value="${matchInstance.secondQtrTeamBScore}" required=""/></td>
+			<td><g:field name="thirdQtrTeamBScore" type="number" value="${matchInstance.thirdQtrTeamBScore}" required=""/></td>
+			<td><g:field name="fourthQtrTeamBScore" type="number" value="${matchInstance.fourthQtrTeamBScore}" required=""/></td>
+		</tr>	
+	</tbody>
+</table>
 
-<div class="fieldcontain ${hasErrors(bean: matchInstance, field: 'firstQtrTeamAScore', 'error')} required">
-	<label for="firstQtrTeamAScore">
-		<g:message code="match.firstQtrTeamAScore.label" default="First Qtr Team AS core" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field name="firstQtrTeamAScore" type="number" value="${matchInstance.firstQtrTeamAScore}" required=""/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: matchInstance, field: 'firstQtrTeamBScore', 'error')} required">
-	<label for="firstQtrTeamBScore">
-		<g:message code="match.firstQtrTeamBScore.label" default="First Qtr Team BS core" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field name="firstQtrTeamBScore" type="number" value="${matchInstance.firstQtrTeamBScore}" required=""/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: matchInstance, field: 'secondQtrTeamAScore', 'error')} required">
-	<label for="secondQtrTeamAScore">
-		<g:message code="match.secondQtrTeamAScore.label" default="Second Qtr Team AS core" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field name="secondQtrTeamAScore" type="number" value="${matchInstance.secondQtrTeamAScore}" required=""/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: matchInstance, field: 'secondQtrTeamBScore', 'error')} required">
-	<label for="secondQtrTeamBScore">
-		<g:message code="match.secondQtrTeamBScore.label" default="Second Qtr Team BS core" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field name="secondQtrTeamBScore" type="number" value="${matchInstance.secondQtrTeamBScore}" required=""/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: matchInstance, field: 'thirdQtrTeamAScore', 'error')} required">
-	<label for="thirdQtrTeamAScore">
-		<g:message code="match.thirdQtrTeamAScore.label" default="Third Qtr Team AS core" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field name="thirdQtrTeamAScore" type="number" value="${matchInstance.thirdQtrTeamAScore}" required=""/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: matchInstance, field: 'thirdQtrTeamBScore', 'error')} required">
-	<label for="thirdQtrTeamBScore">
-		<g:message code="match.thirdQtrTeamBScore.label" default="Third Qtr Team BS core" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field name="thirdQtrTeamBScore" type="number" value="${matchInstance.thirdQtrTeamBScore}" required=""/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: matchInstance, field: 'fourthQtrTeamAScore', 'error')} required">
-	<label for="fourthQtrTeamAScore">
-		<g:message code="match.fourthQtrTeamAScore.label" default="Fourth Qtr Team AS core" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field name="fourthQtrTeamAScore" type="number" value="${matchInstance.fourthQtrTeamAScore}" required=""/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: matchInstance, field: 'fourthQtrTeamBScore', 'error')} required">
-	<label for="fourthQtrTeamBScore">
-		<g:message code="match.fourthQtrTeamBScore.label" default="Fourth Qtr Team BS core" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field name="fourthQtrTeamBScore" type="number" value="${matchInstance.fourthQtrTeamBScore}" required=""/>
-</div>
 
 <div class="fieldcontain ${hasErrors(bean: matchInstance, field: 'overtimesNumber', 'error')} required">
 	<label for="overtimesNumber">

@@ -11,7 +11,7 @@ class Player {
 	boolean injuried
 	
 	String toString() {
-		"$person.fullname - #$shirtNumber"
+		"$person - # $shirtNumber"
 	}
 
     static constraints = {

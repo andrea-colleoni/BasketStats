@@ -53,6 +53,17 @@
 					
 				</li>
 				</g:if>
+				
+				<g:if test="${teamInstance?.championshipPhases}">
+				<li class="fieldcontain">
+					<span id="championshipPhases-label" class="property-label"><g:message code="team.championshipPhases.label" default="Championship phases" /></span>
+					
+						<g:each in="${teamInstance.championshipPhases}" var="p">
+						<span class="property-value" aria-labelledby="playerSets-label"><g:link controller="championshipPhase" action="show" id="${p.id}">${p?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>				
 			
 				<g:if test="${teamInstance?.playerSets}">
 				<li class="fieldcontain">

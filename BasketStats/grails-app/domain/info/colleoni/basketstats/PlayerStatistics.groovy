@@ -3,7 +3,7 @@ package info.colleoni.basketstats
 class PlayerStatistics {
 	
 	Match match
-	Roster roster
+	PlayerSet playerSet
 	Player player
 	static belongsTo = [Match, Player]
 	
@@ -58,7 +58,7 @@ class PlayerStatistics {
 
     static constraints = {
 		match()
-		roster()
+		playerSet()
 		player()
 	
 		startingFive()

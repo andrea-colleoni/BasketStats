@@ -10,6 +10,14 @@
 	<g:textField name="fullname" value="${personInstance?.fullname}"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: personInstance, field: 'nick', 'error')} ">
+	<label for="nick">
+		<g:message code="person.nick.label" default="Nick" />
+		
+	</label>
+	<g:textField name="nick" value="${personInstance?.nick}"/>
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: personInstance, field: 'email', 'error')} ">
 	<label for="email">
 		<g:message code="person.email.label" default="Email" />

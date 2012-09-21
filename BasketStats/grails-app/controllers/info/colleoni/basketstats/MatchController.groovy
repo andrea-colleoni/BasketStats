@@ -1,6 +1,7 @@
 package info.colleoni.basketstats
 
 import org.springframework.dao.DataIntegrityViolationException
+import grails.converters.*
 
 class MatchController {
 
@@ -14,6 +15,16 @@ class MatchController {
         params.max = Math.min(max ?: 10, 100)
         [matchInstanceList: Match.list(params), matchInstanceTotal: Match.count()]
     }
+	
+	def getTeams = {
+		def t = Team.createCriteria()
+		def teamsList = t.list {
+			championshipPhases {
+				eq ("id", params.championshipPhaseId.toLong())
+			}
+		}
+		render teamsList as JSON
+	}
 
     def create() {
         [matchInstance: new Match(params)]

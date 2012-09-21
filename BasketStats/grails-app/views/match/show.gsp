@@ -32,24 +32,15 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${matchInstance?.teamA}">
 				<li class="fieldcontain">
-					<span id="teamA-label" class="property-label"><g:message code="match.teamA.label" default="Team A" /></span>
-					
-						<span class="property-value" aria-labelledby="teamA-label"><g:link controller="matchCall" action="show" id="${matchInstance?.teamA?.id}">${matchInstance?.teamA?.encodeAsHTML()}</g:link></span>
-					
+					<span id="match-label" class="property-label"><g:message code="match.label" default="Match" /></span>
+					<span class="property-value">
+						<g:link controller="matchCall" action="show" id="${matchInstance?.teamA?.id}">${matchInstance?.teamA?.name.encodeAsHTML()}</g:link>
+						-
+						<g:link controller="matchCall" action="show" id="${matchInstance?.teamB?.id}">${matchInstance?.teamB?.name.encodeAsHTML()}</g:link>
+					</span>
 				</li>
-				</g:if>
-			
-				<g:if test="${matchInstance?.teamB}">
-				<li class="fieldcontain">
-					<span id="teamB-label" class="property-label"><g:message code="match.teamB.label" default="Team B" /></span>
-					
-						<span class="property-value" aria-labelledby="teamB-label"><g:link controller="matchCall" action="show" id="${matchInstance?.teamB?.id}">${matchInstance?.teamB?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
-			
+				
 				<g:if test="${matchInstance?.matchDate}">
 				<li class="fieldcontain">
 					<span id="matchDate-label" class="property-label"><g:message code="match.matchDate.label" default="Match Date" /></span>
@@ -108,117 +99,71 @@
 					
 				</li>
 				</g:if>
-			
-				<g:if test="${matchInstance?.firstQtrTeamAScore}">
-				<li class="fieldcontain">
-					<span id="firstQtrTeamAScore-label" class="property-label"><g:message code="match.firstQtrTeamAScore.label" default="First Qtr Team A Score" /></span>
-					
-						<span class="property-value" aria-labelledby="firstQtrTeamAScore-label"><g:fieldValue bean="${matchInstance}" field="firstQtrTeamAScore"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${matchInstance?.firstQtrTeamBScore}">
-				<li class="fieldcontain">
-					<span id="firstQtrTeamBScore-label" class="property-label"><g:message code="match.firstQtrTeamBScore.label" default="First Qtr Team BS core" /></span>
-					
-						<span class="property-value" aria-labelledby="firstQtrTeamBScore-label"><g:fieldValue bean="${matchInstance}" field="firstQtrTeamBScore"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${matchInstance?.secondQtrTeamAScore}">
-				<li class="fieldcontain">
-					<span id="secondQtrTeamAScore-label" class="property-label"><g:message code="match.secondQtrTeamAScore.label" default="Second Qtr Team AS core" /></span>
-					
-						<span class="property-value" aria-labelledby="secondQtrTeamAScore-label"><g:fieldValue bean="${matchInstance}" field="secondQtrTeamAScore"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${matchInstance?.secondQtrTeamBScore}">
-				<li class="fieldcontain">
-					<span id="secondQtrTeamBScore-label" class="property-label"><g:message code="match.secondQtrTeamBScore.label" default="Second Qtr Team BS core" /></span>
-					
-						<span class="property-value" aria-labelledby="secondQtrTeamBScore-label"><g:fieldValue bean="${matchInstance}" field="secondQtrTeamBScore"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${matchInstance?.thirdQtrTeamAScore}">
-				<li class="fieldcontain">
-					<span id="thirdQtrTeamAScore-label" class="property-label"><g:message code="match.thirdQtrTeamAScore.label" default="Third Qtr Team AS core" /></span>
-					
-						<span class="property-value" aria-labelledby="thirdQtrTeamAScore-label"><g:fieldValue bean="${matchInstance}" field="thirdQtrTeamAScore"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${matchInstance?.thirdQtrTeamBScore}">
-				<li class="fieldcontain">
-					<span id="thirdQtrTeamBScore-label" class="property-label"><g:message code="match.thirdQtrTeamBScore.label" default="Third Qtr Team BS core" /></span>
-					
-						<span class="property-value" aria-labelledby="thirdQtrTeamBScore-label"><g:fieldValue bean="${matchInstance}" field="thirdQtrTeamBScore"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${matchInstance?.fourthQtrTeamAScore}">
-				<li class="fieldcontain">
-					<span id="fourthQtrTeamAScore-label" class="property-label"><g:message code="match.fourthQtrTeamAScore.label" default="Fourth Qtr Team AS core" /></span>
-					
-						<span class="property-value" aria-labelledby="fourthQtrTeamAScore-label"><g:fieldValue bean="${matchInstance}" field="fourthQtrTeamAScore"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${matchInstance?.fourthQtrTeamBScore}">
-				<li class="fieldcontain">
-					<span id="fourthQtrTeamBScore-label" class="property-label"><g:message code="match.fourthQtrTeamBScore.label" default="Fourth Qtr Team BS core" /></span>
-					
-						<span class="property-value" aria-labelledby="fourthQtrTeamBScore-label"><g:fieldValue bean="${matchInstance}" field="fourthQtrTeamBScore"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${matchInstance?.overtimesNumber}">
-				<li class="fieldcontain">
-					<span id="overtimesNumber-label" class="property-label"><g:message code="match.overtimesNumber.label" default="Overtimes Number" /></span>
-					
-						<span class="property-value" aria-labelledby="overtimesNumber-label"><g:fieldValue bean="${matchInstance}" field="overtimesNumber"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${matchInstance?.overtimesTeamAScore}">
-				<li class="fieldcontain">
-					<span id="overtimesTeamAScore-label" class="property-label"><g:message code="match.overtimesTeamAScore.label" default="Overtimes Team AS core" /></span>
-					
-						<span class="property-value" aria-labelledby="overtimesTeamAScore-label"><g:fieldValue bean="${matchInstance}" field="overtimesTeamAScore"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${matchInstance?.overtimesTeamBScore}">
-				<li class="fieldcontain">
-					<span id="overtimesTeamBScore-label" class="property-label"><g:message code="match.overtimesTeamBScore.label" default="Overtimes Team BS core" /></span>
-					
-						<span class="property-value" aria-labelledby="overtimesTeamBScore-label"><g:fieldValue bean="${matchInstance}" field="overtimesTeamBScore"/></span>
-					
-				</li>
-				</g:if>
+				
+				<table id="QuerterByQuarterScore" class="SimpleCleanTable">
+					<thead>
+						<tr>
+							<th>&nbsp;</th>
+							<th>1° Qtr.</th>
+							<th>2° Qtr.</th>
+							<th>3° Qtr.</th>
+							<th>4° Qtr.</th>
+							<g:if test="${matchInstance?.overtimesNumber}">
+								<th>OTs (<span class="property-value" aria-labelledby="overtimesNumber-label"><g:fieldValue bean="${matchInstance}" field="overtimesNumber"/></span>)</th>
+							</g:if>
+							<th>Final</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th><g:message code="match.teamA.label" default="Team A" /></th>
+							<td><span class="property-value" aria-labelledby="firstQtrTeamAScore-label"><g:fieldValue bean="${matchInstance}" field="firstQtrTeamAScore"/></span></td>
+							<td><span class="property-value" aria-labelledby="secondQtrTeamAScore-label"><g:fieldValue bean="${matchInstance}" field="secondQtrTeamAScore"/></span></td>
+							<td><span class="property-value" aria-labelledby="thirdQtrTeamAScore-label"><g:fieldValue bean="${matchInstance}" field="thirdQtrTeamAScore"/></span></td>
+							<td><span class="property-value" aria-labelledby="fourthQtrTeamAScore-label"><g:fieldValue bean="${matchInstance}" field="fourthQtrTeamAScore"/></span></td>
+							<g:if test="${matchInstance?.overtimesNumber}">
+								<td><span class="property-value" aria-labelledby="overtimesTeamAScore-label"><g:fieldValue bean="${matchInstance}" field="overtimesTeamAScore"/></span></td>
+							</g:if>
+							<th><span class="property-value" aria-labelledby="finalTeamAScore-label"><g:fieldValue bean="${matchInstance}" field="finalTeamAScore"/></span></th>						
+						</tr>
+						<tr>
+							<th><g:message code="match.teamB.label" default="Team B" /></th>		
+							<td><span class="property-value" aria-labelledby="firstQtrTeamBScore-label"><g:fieldValue bean="${matchInstance}" field="firstQtrTeamBScore"/></span></td>
+							<td><span class="property-value" aria-labelledby="secondQtrTeamBScore-label"><g:fieldValue bean="${matchInstance}" field="secondQtrTeamBScore"/></span></td>
+							<td><span class="property-value" aria-labelledby="thirdQtrTeamBScore-label"><g:fieldValue bean="${matchInstance}" field="thirdQtrTeamBScore"/></span></td>
+							<td><span class="property-value" aria-labelledby="fourthQtrTeamBScore-label"><g:fieldValue bean="${matchInstance}" field="fourthQtrTeamBScore"/></span></td>
+							<g:if test="${matchInstance?.overtimesNumber}">
+								<td><span class="property-value" aria-labelledby="overtimesTeamBScore-label"><g:fieldValue bean="${matchInstance}" field="overtimesTeamBScore"/></span></td>
+							</g:if>
+							<th><span class="property-value" aria-labelledby="finalTeamBScore-label"><g:fieldValue bean="${matchInstance}" field="finalTeamBScore"/></span></th>					
+						</tr>	
+					</tbody>
+				</table>				
 			
 				<g:if test="${matchInstance?.matchStats}">
-				<li class="fieldcontain">
 					<span id="matchStats-label" class="property-label"><g:message code="match.matchStats.label" default="Match Stats" /></span>
-					
+					<table id="MatchStats" class="SimpleCleanTable">	
+						<thead>
+							<tr>
+								<th>Player</th>
+								<th>Minutes</th>
+								<th>Grade</th>
+								<th>Score</th>
+							</tr>
+						</thead>
+						<tbody>			
 						<g:each in="${matchInstance.matchStats}" var="m">
-						<span class="property-value" aria-labelledby="matchStats-label"><g:link controller="playerStatistics" action="show" id="${m.id}">${m?.encodeAsHTML()}</g:link></span>
+							<tr>
+								<th><g:link controller="playerStatistics" action="show" id="${m.id}">${m?.player?.encodeAsHTML()}</g:link>
+								</th>
+								<td>${m?.totalMinutes}</td>
+								<td>${m?.overallGrade}</td>
+								<th>${m?.totalPoints}</th>
+							</tr>
 						</g:each>
-					
-				</li>
+						</tbody>
+					</table>					
 				</g:if>
-			
 			</ol>
 			<g:form>
 				<fieldset class="buttons">

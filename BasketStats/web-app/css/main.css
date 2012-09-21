@@ -626,3 +626,13 @@ a.skip {
     float: right;
     width: 755px;	
 }
+
+.SimpleCleanTable {
+	width: 100%;
+	border: 1px dotted;
+	margin: 1.2em;
+}
+
+.SimpleCleanTable input {
+	width: 40px;
+}
